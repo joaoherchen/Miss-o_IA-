@@ -1,1 +1,771 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --bg: #060812;
+  --card: rgba(13, 18, 35, .88);
+  --line: rgba(112, 126, 180, .25);
+
+  --text: #f4f7ff;
+  --muted: #9ba6c7;
+
+  --blue: #62a6ff;
+  --cyan: #57e6ff;
+
+  --green: #54e39a;
+  --red: #ff6b81;
+}
+
+
+body {
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: Inter, sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* FUNDO */
+
+.bg {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(75,126,255,.20),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(60,225,255,.13),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #050711,
+      #091022 55%,
+      #050711
+    );
+}
+
+
+.bg::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .12;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+}
+
+
+/* TOPO */
+
+.topbar {
+
+  height: 72px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--line);
+
+  background: rgba(3,5,13,.55);
+
+  backdrop-filter: blur(12px);
+}
+
+
+.brand {
+
+  font-family: "Space Grotesk";
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.brand span {
+  color: var(--cyan);
+}
+
+
+.status {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+}
+
+
+.dot {
+
+  display: inline-block;
+
+  width: 8px;
+
+  height: 8px;
+
+  background: var(--green);
+
+  border-radius: 50%;
+
+  margin-right: 7px;
+
+  box-shadow:
+    0 0 12px var(--green);
+}
+
+
+/* PRINCIPAL */
+
+main {
+
+  width: min(960px, 92%);
+
+  margin: 0 auto;
+
+  min-height: calc(100vh - 125px);
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 42px 0;
+}
+
+
+.screen {
+
+  display: none;
+
+  width: 100%;
+
+  animation: enter .45s ease;
+}
+
+
+.screen.active {
+  display: block;
+}
+
+
+@keyframes enter {
+
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+/* CARDS */
+
+.hero-card,
+.mission-card,
+.result-card {
+
+  background: var(--card);
+
+  border: 1px solid var(--line);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 24px 80px rgba(0,0,0,.35);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* INÍCIO */
+
+.hero-card {
+
+  padding: clamp(28px, 6vw, 68px);
+
+  text-align: center;
+}
+
+
+.badge {
+
+  display: inline-block;
+
+  border: 1px solid rgba(87,230,255,.3);
+
+  color: var(--cyan);
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  margin-bottom: 20px;
+
+  background: rgba(87,230,255,.06);
+}
+
+
+h1 {
+
+  font-family: "Space Grotesk";
+
+  font-size: clamp(38px, 7vw, 72px);
+
+  line-height: .98;
+
+  letter-spacing: -2px;
+}
+
+
+h1 span {
+  color: var(--cyan);
+}
+
+
+.lead {
+
+  max-width: 700px;
+
+  margin: 25px auto 0;
+
+  color: var(--muted);
+
+  line-height: 1.75;
+
+  font-size: 16px;
+}
+
+
+/* INFORMAÇÕES */
+
+.mission-info {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0;
+
+  margin: 35px auto;
+
+  max-width: 500px;
+}
+
+
+.mission-info div {
+
+  flex: 1;
+
+  padding: 14px;
+
+  border-right: 1px solid var(--line);
+}
+
+
+.mission-info div:last-child {
+  border: 0;
+}
+
+
+.mission-info b {
+
+  display: block;
+
+  font:
+    700 25px
+    "Space Grotesk";
+
+  color: var(--text);
+}
+
+
+.mission-info small {
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* BOTÃO */
+
+.primary {
+
+  border: 0;
+
+  cursor: pointer;
+
+  color: #04101c;
+
+  font-weight: 800;
+
+  letter-spacing: .7px;
+
+  padding: 15px 23px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--cyan),
+      var(--blue)
+    );
+
+  box-shadow:
+    0 10px 35px rgba(87,230,255,.18);
+
+  transition: .2s;
+}
+
+
+.primary:hover {
+
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+}
+
+
+.author {
+
+  margin-top: 18px;
+
+  color: #687395;
+
+  font-size: 12px;
+}
+
+
+/* CABEÇALHO DO JOGO */
+
+.game-header {
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 14px;
+}
+
+
+.mini-title {
+
+  color: var(--cyan);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 7px;
+}
+
+
+.game-header h2 {
+
+  font:
+    700 clamp(25px, 4vw, 40px)
+    "Space Grotesk";
+}
+
+
+.score-box {
+
+  padding: 12px 17px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 13px;
+
+  color: var(--cyan);
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  background: rgba(255,255,255,.03);
+}
+
+
+/* BARRA */
+
+.progress {
+
+  height: 5px;
+
+  background: rgba(255,255,255,.08);
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  margin-bottom: 18px;
+}
+
+
+.progress div {
+
+  height: 100%;
+
+  width: 25%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--cyan)
+    );
+
+  transition: width .4s;
+}
+
+
+/* MISSÃO */
+
+.mission-card {
+
+  padding: clamp(24px, 5vw, 52px);
+}
+
+
+.icon {
+
+  font-size: 46px;
+
+  margin-bottom: 18px;
+}
+
+
+#pergunta {
+
+  font-size: 19px;
+
+  line-height: 1.6;
+
+  font-weight: 600;
+
+  max-width: 780px;
+}
+
+
+/* ALTERNATIVAS */
+
+.options {
+
+  display: grid;
+
+  gap: 12px;
+
+  margin: 25px 0;
+}
+
+
+.option {
+
+  text-align: left;
+
+  width: 100%;
+
+  padding: 17px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 13px;
+
+  background: rgba(255,255,255,.025);
+
+  color: var(--text);
+
+  font:
+    600 15px
+    Inter;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.option:hover {
+
+  border-color:
+    rgba(87,230,255,.55);
+
+  background:
+    rgba(87,230,255,.06);
+
+  transform: translateX(3px);
+}
+
+
+.option.correct {
+
+  border-color: var(--green);
+
+  background:
+    rgba(84,227,154,.10);
+}
+
+
+.option.wrong {
+
+  border-color: var(--red);
+
+  background:
+    rgba(255,107,129,.09);
+}
+
+
+.option:disabled {
+  cursor: default;
+}
+
+
+/* FEEDBACK */
+
+.feedback {
+
+  min-height: 45px;
+
+  color: var(--muted);
+
+  line-height: 1.55;
+
+  margin-bottom: 15px;
+}
+
+
+.feedback strong {
+  color: var(--text);
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/* RESULTADO */
+
+.result-card {
+
+  text-align: center;
+
+  padding: clamp(28px, 6vw, 62px);
+}
+
+
+.trophy {
+
+  font-size: 70px;
+
+  margin-bottom: 15px;
+}
+
+
+.result-card h1 {
+
+  font-size:
+    clamp(40px, 7vw, 64px);
+
+  margin-bottom: 14px;
+}
+
+
+.result-card > p {
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+
+/* PONTUAÇÃO FINAL */
+
+.final-score {
+
+  margin: 28px auto;
+
+  display: grid;
+}
+
+
+.final-score span {
+
+  font:
+    800 clamp(60px, 10vw, 100px)
+    "Space Grotesk";
+
+  color: var(--cyan);
+
+  line-height: 1;
+}
+
+
+.final-score small {
+
+  color: var(--muted);
+
+  letter-spacing: 2px;
+
+  margin-top: 8px;
+}
+
+
+/* CONCEITO */
+
+.concept {
+
+  max-width: 700px;
+
+  margin: 25px auto 30px;
+
+  padding: 22px;
+
+  text-align: left;
+
+  border: 1px solid var(--line);
+
+  border-radius: 17px;
+
+  background: rgba(255,255,255,.025);
+}
+
+
+.concept h3 {
+
+  margin-bottom: 9px;
+
+  color: var(--cyan);
+}
+
+
+.concept p {
+
+  color: var(--muted);
+
+  line-height: 1.65;
+
+  font-size: 14px;
+}
+
+
+/* RODAPÉ */
+
+footer {
+
+  min-height: 53px;
+
+  padding: 15px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  color: #56617e;
+
+  font-size: 9px;
+
+  letter-spacing: 1.2px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    height: 62px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  main {
+    padding: 25px 0;
+  }
+
+  .game-header {
+    align-items: center;
+  }
+
+  .score-box {
+    font-size: 12px;
+  }
+
+  #pergunta {
+    font-size: 17px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
