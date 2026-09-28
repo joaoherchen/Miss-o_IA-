@@ -14,44 +14,44 @@ const perguntas = [
             },
             {
                 texto: "one piece",
-                afirmacao: "lufe&zoro"
+                afirmacao: "luffe&zoro"
             }           
             
         ]
     },
     {
-        enunciado: "quem é mai forte atualmente",
+        enunciado: "quem é mais forte atualmente",
         alternativas: [
             {
-                texto:"jjjjjjjjjjjjjjjjjjjjjj",
-                afirmacao:"afirmacao"
+                texto:"one piece",
+                afirmacao:"luffe"
             },
             {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:"afirmacao"
+                texto: "naruto",
+                afirmacao:"naruto"
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "melhor animação",
         alternativas: [
             {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
+                texto:"jujutsu kaizem",
+                afirmacao:"MAPPA"
             },
             {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
+                texto:"demon slayer",
+                afirmacao:"Ufotable"
             }
             
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "qualanime com a melhor historia",
         alternativas: [
             {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
+                texto:"Fullmetal Alchemist: Brotherhood: ",
+                afirmacao:"Fullmetal Alchemist: Brotherhood: "
             },
             {
                 texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
